@@ -1,0 +1,590 @@
+/* ~######### General Styles ##########*/
+body {
+  font-family: "Poppins", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  color: #343434;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+  width: 100%;
+  transition: 0.5s;
+}
+p {
+  margin: 0;
+  color: #748182;
+}
+.pb-70 {
+  padding-bottom: 70px;
+}
+.bg-gray {
+  background-color: #f7f7f7;
+}
+.fw-800 {
+  font-weight: 800;
+}
+.fw-900 {
+  font-weight: 900;
+}
+.heading {
+  font-size: 2.5rem;
+  font-weight: 900;
+  position: relative;
+  display: inline-block;
+  z-index: 5;
+}
+.heading::before {
+  content: "";
+  width: 100%;
+  height: 30px;
+  background-image: url(../images/dots.png);
+  background-repeat: repeat;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  z-index: -1;
+}
+@media (min-width: 1400px) {
+  .container-md {
+    max-width: 1150px;
+  }
+}
+/* ~#########      Start   reload page    ##########*/
+#layer {
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    z-index: 999;
+    animation: trans-bottom 0.5s alternate ease-in;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    opacity: 0.8;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    animation: trans-top 0.5s alternate ease-out;
+  }
+}
+@keyframes trans-top {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes trans-bottom {
+  0% {
+    bottom: 50%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+/* ~#########      end     reload page    ##########*/
+/* ~#########      Start Nav bar          ##########*/
+#nav-bar {
+  & {
+    padding: 10px 0;
+  }
+  .container-md .logo {
+    letter-spacing: 1px;
+    font-size: 1.125rem;
+    font-weight: 800;
+  }
+
+  .navbar-toggler {
+    border: none !important ;
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .container-md .collapse .navbar-nav .nav-link {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .navbar-nav .nav-link::before {
+    content: "";
+    height: 2px;
+    position: absolute;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    transition: left 0.5s;
+  }
+  .navbar-nav .nav-link.active::before {
+    left: 0;
+  }
+  .container-md .nav-link {
+    color: #111111;
+  }
+}
+@media (min-width: 768px) {
+  .container-md .collapse .navbar-nav .nav-link {
+    font-size: 13px;
+    padding: 0;
+  }
+  .container-md .collapse .navbar-nav .nav-item {
+    margin-right: 25px;
+  }
+}
+@media (min-width: 992px) {
+  .container-md .collapse .navbar-nav .nav-link {
+    font-size: 14px;
+  }
+  .container-md .collapse .navbar-nav .nav-item {
+    margin-right: 36px;
+  }
+}
+@media (max-width: 768px) {
+  #nav-bar .navbar-nav {
+    border-top: 1px solid rgba(12, 12, 12, 0.04);
+    margin-top: 30px;
+  }
+  .container-md .nav-link {
+    font-size: 13px;
+  }
+  .container-md .nav-item {
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  .navbar-nav .nav-link::before {
+    bottom: 6px !important;
+  }
+}
+/* ~#########      end   Nav bar          #########*/
+/* ~#########      start  home            #########*/
+#home {
+  background: linear-gradient(rgba(0, 0, 0, 0.6) 0% 100%), url(../images/bg.jpg);
+  min-height: 100vh;
+  background-position: 0px 0px;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .home-text h2 {
+    font-size: 3.125rem;
+    color: white;
+  }
+  .dynamic-title .iam {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.75rem;
+    font-weight: 200;
+  }
+  .dynamic-title .typing {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.75rem;
+    font-weight: 400;
+  }
+  .home-text .cd-words-wrapper {
+    margin-top: 5px;
+  }
+  @media (max-width: 1170px) {
+    .dynamic-title {
+      padding: 0 !important;
+    }
+    .dynamic-title .iam {
+      font-size: 2.75rem;
+    }
+
+    .dynamic-title .typing {
+      font-size: 2.75rem;
+    }
+    .home-text .cd-words-wrapper {
+      margin-top: 0;
+    }
+  }
+  @media (max-width: 768px) {
+    .dynamic-title .iam {
+      font-size: 1.85rem;
+    }
+    .dynamic-title .typing {
+      font-size: 1.85rem;
+    }
+    .home-text .cd-words-wrapper {
+      margin-top: -6px;
+    }
+  }
+
+  .home-text ul li {
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+}
+/* ~#########      end    home            ##########*/
+/* ~#########      start  about           ##########*/
+#about {
+  .row .about-img::after {
+    content: "";
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: -30px;
+    bottom: -30px;
+    background-image: url(../images/dots.png);
+    background-repeat: repeat;
+    z-index: -1;
+  }
+  .row .about-text span {
+    color: #748182;
+  }
+  .row .about-text p {
+    color: #999999;
+    font-size: .875rem;
+    letter-spacing: .125rem;
+  }
+
+  .row .about-progress .progress {
+    --bs-progress-height: 1.5rem;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+    background-color: #f7f7f7;
+  }
+  .row .about-progress .progress-bar {
+    border-radius: 5px;
+  }
+  .row .btn-outline-dark {
+    font-size: 0.8125rem;
+    transition: 0.5s;
+    padding: 10px 30px;
+  }
+  .row .btn-outline-secondary {
+    font-size: 0.8125rem;
+    transition: 0.5s;
+    padding: 10px 30px;
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #000;
+    --bs-btn-border-color: #000;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #fff;
+  }
+}
+/* ~#########      end    about           ##########*/
+/* ~#########      start  services        ##########*/
+#services {
+  .row h2 {
+    font-size: 1.125rem;
+    font-weight: 800;
+  }
+  .row p {
+    font-size: 0.875rem;
+  }
+  .row .col-lg-4 .text-center {
+    box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .row span i {
+    font-size: 1.875rem;
+    width: 4.375rem;
+    height: 4.375rem;
+    line-height: 4.375rem;
+    background: #f4f4f4;
+    border-radius: 50%;
+    transition: 0.5s;
+  }
+  .row .col-lg-4:hover span i {
+    background: #000;
+    color: white;
+  }
+}
+/* ~#########      end    services        ##########*/
+/* ~#########      start  works           ##########*/
+#works {
+  .nav li button {
+    color: black !important;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0;
+    position: relative;
+    margin-left: 30px;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  .nav li button::before {
+    content: "";
+    height: 0.155rem;
+    position: absolute;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    transition: left 0.5s;
+  }
+  .nav li button.active::before {
+    left: 0;
+  }
+  .row .work-icons {
+    position: absolute;
+    background-color: #fff;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(11px);
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .row .work-icons h2 {
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+  .row .work-icons:hover {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .row .work-icons ul li {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .row .work-icons ul li:hover {
+    color: black;
+    background-color: white;
+  }
+  .row .work-icons h2 {
+    transform: translatey(-15px);
+    transition: 0.5s;
+  }
+  .row .work-icons:hover h2 {
+    transform: translatey(0px);
+  }
+  .row .work-icons ul {
+    transform: translatey(3px);
+    transition: 0.5s;
+  }
+  .row .work-icons:hover ul {
+    transform: translatey(0px);
+  }
+}
+/* ~#########       end    works          ##########*/
+/* ~#########       start  testimonial    ##########*/
+#clients {
+  .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    background-color: #869791 !important;
+    transition: opacity 0.1s ease;
+  }
+  .carousel-indicators .active {
+    opacity: 1;
+  }
+  .carousel-indicators button:hover {
+    opacity: 0.8;
+  }
+  .carousel-item img {
+    width: 90px !important;
+    border-radius: 50%;
+    margin: auto;
+  }
+  .carousel-item h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  .carousel-item p {
+    font-size: 0.9375rem;
+    word-spacing: 2px;
+    font-weight: 400;
+  }
+  .carousel-item span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #888888;
+  }
+}
+@media (min-width: 992px) {
+  .carousel-item p {
+    width: 800px;
+    margin: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .carousel-item p {
+    width: 980px;
+    margin: auto;
+  }
+}
+/* ~#########       end    testimonial    ##########*/
+/* ~#########       start  projects       ##########*/
+.projects {
+  .row h2 {
+    font-size: 1.875rem;
+    font-weight: 900;
+  }
+  .row i {
+    font-size: 1.875rem;
+    color: #343434;
+  }
+  .row p {
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+}
+/* ~#########        end    projects      ###########*/
+/* ~#########        start  team          ###########*/
+#team {
+  .row .card-body {
+    background-color: #5b5b5b;
+  }
+  .row .card {
+    --bs-card-inner-border-radius: none;
+  }
+  .row .card-body h2 {
+    font-size: 1.5625rem;
+    font-weight: 500;
+    color: white;
+  }
+  .row .card-body h3 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+  }
+  .row .card .overflow-hidden:hover img {
+    scale: 1.2;
+  }
+  .row .card .team-icon {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    top: 100px;
+    left: 80px;
+    bottom: 100px;
+    right: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    rotate: y 180deg;
+    transition: 0.6s;
+  }
+  .row .card:hover .team-icon {
+    opacity: 1;
+    rotate: y 360deg;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+  }
+  .row .card:hover .team-icon ul li {
+    margin-left: 0.625rem;
+  }
+  .row .card .team-icon ul li {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid black;
+    border-radius: 50%;
+    transition: margin-left 0.5s;
+    cursor: pointer;
+  }
+  .row .card .team-icon ul li:hover {
+    color: black;
+    background-color: white;
+  }
+}
+/* ~#########         end    team         ##########*/
+/* ~#########         start  contact      ##########*/
+#contact {
+  .row h2 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .row p {
+    font-size: 0.9375rem;
+  }
+  .row .contact-contain ul li i {
+    font-size: 1.5625rem;
+    transition: 0.5s;
+  }
+  .row .contact-contain ul li {
+    width: 4rem;
+    height: 4rem;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    transition: 0.5s;
+  }
+  .row .contact-contain:hover ul li {
+    background-color: #000;
+  }
+  .row .contact-contain:hover ul li i {
+    color: white;
+  }
+  .row form textarea,
+  .row form input {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    border: none !important;
+    border-width: none;
+    border-radius: var(--bs-border-radius);
+    text-decoration: none;
+    resize: both;
+    max-width: 100%;
+  }
+  .row form textarea:focus,
+  .row form input:focus {
+    outline: none;
+  }
+  .row .btn-outline-secondary {
+    font-size: 0.8125rem;
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #000;
+    --bs-btn-border-color: #000;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #fff;
+  }
+}
+#footer p {
+  font-size: 0.8125rem;
+}
+/* ~#########         end    contact      ##########*/
